@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.birthdayreminder.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_newUserFragment"
+            app:destination="@id/newUserFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" >
+            <argument
+                android:name="gender"
+                android:defaultValue="true" />
+            <argument
+                android:name="remind_me"
+                android:defaultValue="true" />
+            <argument
+                android:name="name"
+                android:defaultValue="Saish" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/newUserFragment"
+        android:name="com.example.birthdayreminder.NewUserFragment"
+        android:label="fragment_new_user"
+        tools:layout="@layout/fragment_new_user" >
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <argument
+            android:name="date"
+            app:argType="string" />
+        <argument
+            android:name="gender"
+            app:argType="boolean"
+            android:defaultValue="true" />
+        <argument
+            android:name="remind_me"
+            app:argType="boolean"
+            android:defaultValue="true" />
+        <action
+            android:id="@+id/action_newUserFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"
+            />
+    </fragment>
+    <argument
+        android:name="day"
+        android:defaultValue="-1" />
+    <argument
+        android:name="month"
+        android:defaultValue="-1" />
+    <argument
+        android:name="year"
+        android:defaultValue="-1" />
+    <argument
+        android:name="gender"
+        android:defaultValue="true" />
+    <argument
+        android:name="remind_me"
+        android:defaultValue="true" />
+    <argument
+        android:name="name" />
+</navigation>

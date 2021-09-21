@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Birthday Reminder</string>
+    <string name="name">Name</string>
+    <string name="male">Male</string>
+    <string name="remind_me">Remind me</string>
+    <string name="save">Save</string>
 </resources>
